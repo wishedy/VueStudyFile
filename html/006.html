@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/1.0.21-csp/vue.js"></script>
+</head>
+<body>
+<div id="box">
+    <button onclick="alert(1)">原生点击事件</button>
+    <button v-on:click="show()">vue点击事件</button>
+    <button v-on:click="add()">vue点击事件改变数据</button>
+    <ul>
+        <li v-for="item in arr">{{item}}{{$index}}</li>
+    </ul>
+</div>
+<script>
+    window.onload = function(){
+        //c就相当于vue对象，可以起名字，也可以不起名字
+        var c = new Vue({
+            "el":"#box",//元素选择器，
+            data:{//data里面的元素可以直接渲染到元素中去
+                arr:["a","v","b"]
+            },
+            methods:{
+                //vue所有的执行方法放在这里
+                show:function(){
+                    alert("点击事件生效");
+                },
+                add:function(){
+                    this.arr.push("这是一条添加的数据");
+                }
+            }
+        })
+    };
+</script>
+</body>
+</html>

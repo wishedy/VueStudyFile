@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/1.0.21-csp/vue.js"></script>
+    <script src="../js/vue-resource.js"></script>
+</head>
+<body>
+<div id="box">
+    <button @click="show()">获取数据</button>
+</div>
+<script>
+    window.onload = function(){
+        var c = new Vue({
+            el:"#box",
+            methods:{
+                show:function(){
+                    this.$http.get("../data/list.json").then(function(res){
+                       console.log(res.data);
+                    },function(){
+                        console.log("失败函数")
+                    });
+                }
+            }
+
+        })
+    }
+</script>
+</body>
+</html>

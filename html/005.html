@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/1.0.21-csp/vue.js"></script>
+</head>
+<body>
+<div id="box">
+    <input type="text" v-model="msg">
+    <p>{{msg}}</p>
+    <p>{{msg2}}</p>
+    <p>{{msg3}}</p>
+    <p>{{arr}}</p>
+    <ul>
+        <li v-repeat="item in arr">{{item}}</li>
+    </ul>
+    <ul><!--item可以genju8自己的需要起名字-->
+        <li v-for="item in json">{{item}}{{$index}}{{$key}}</li>
+    </ul>
+    <ul><!--arr也可以使用同样的方式循环，但是没有意义-->
+        <li v-for="(k,v) in json">{{v}}{{$index}}{{k}}</li>
+    </ul>
+</div>
+<script>
+    window.onload = function(){
+        //c就相当于vue对象，可以起名字，也可以不起名字
+        var c = new Vue({
+            "el":"#box",//元素选择器，
+            data:{//data里面的元素可以直接渲染到元素中去
+                msg:"welcome Vue",
+                msg2:"第二条数据",
+                msg3:true,
+                arr:["a","b","c"],
+                json:{"a":"aaa","b":"bbb","c":"ccc"}
+            }
+        })
+    };
+</script>
+</body>
+</html>

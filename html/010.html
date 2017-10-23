@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/1.0.21-csp/vue.js"></script>
+</head>
+<body>
+<div id="box">
+    <button v-on:click="show($event,2)">按钮</button>
+    <div @click="show2()">
+        <button @click.stop="show()">按钮</button>
+    </div>
+    <div @contextmenu="show($event)">默认事件</div>
+    <div style="width: 300px;height: 300px;background: red" v-show="showOnOff"></div>
+</div>
+<script>
+    window.onload = function(){
+        var c = new Vue({
+            el:"#box",
+            data:{
+                showOnOff:false
+            },
+            methods:{
+                show:function(e,b){//注意传参位置
+                    e.preventDefault();
+                    this.showOnOff = !this.showOnOff;
+
+                },
+                show2:function(){
+                    alert("冒泡成功");
+                }
+            }
+        })
+    }
+</script>
+</body>
+</html>

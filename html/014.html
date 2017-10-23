@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/1.0.21-csp/vue.js"></script>
+</head>
+<body>
+<div id="box">
+    <input type="text" v-model="msg">
+    <p>{{msg}}</p>
+    <p>{{*msg}}</p>
+    <p>{{ms1}}</p>
+    <p>{{{ms1}}}</p>
+</div>
+<script>
+    window.onload =function(){
+        var c= new Vue({
+            el:"#box",
+            data:{
+                msg:"aaaa",
+                ms1:"<h1>带有标签的数据</h1>"
+            }
+        })
+    }
+</script>
+</body>
+</html>

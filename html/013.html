@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/1.0.21-csp/vue.js"></script>
+    <style>
+        .red{
+            color:#ff0000;
+        }
+        .blue{
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <img src="{{url}}" alt="" :width="wid">
+    <img v-bind:src="url" alt="" :width="wid" :title="t">
+    <p :class="[red,b]">这是一段文字</p>
+    <p :class="{red:false,blue:true}">这是一段文字</p>
+    <p :class="{red:aa,blue:bb}">这是一段文字</p>
+    <p :class="json">这是一段文字</p>
+    <p :style="[c,d]">这是一段文字</p>
+    <p :style="{color:'red',fontSize:'30px'}">这是一段文字</p>
+
+</div>
+<script>
+    window.onload =  function(){
+        var c = new Vue({
+            el:"#box",
+            data:{
+                url:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1508753348090&di=e63f6b5ff90f2b57bd6ca04d0d1b1a9d&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3Ddef685c2db00baa1ae214ff82f79d367%2Fcc11728b4710b9128937bed0c9fdfc039245222d.jpg",
+                wid:"200px",
+                t:"简写属性的名称",
+                red:"red",
+                b:"blue",
+                aa:true,
+                bb:false,
+                json:{
+                    red:false,
+                    blue:true
+                },
+                c:{
+                    color:"red"
+                },
+                d:{
+                    fontSize:"20px"
+                }
+            },
+            methods: {
+            }
+
+
+        })
+    }
+</script>
+</body>
+</html>
