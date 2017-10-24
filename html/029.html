@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/1.0.21-csp/vue.js"></script>
+    <script src="../js/vue-resource.js"></script>
+</head>
+<body>
+<div id="box">
+    <p>{{a}}</p>
+    <p>{{jsonData|json}}</p>
+</div>
+<script>
+    window.onload = function(){
+        Vue.directive("on").keyCodes.ctrl = 17;
+        var c = new Vue({
+            data:{
+                a:111,
+                b:2,
+                jsonData:{"name":"aaa","age":111}
+            },
+            methods:{
+                show:function(){
+                    console.log("数据");
+                }
+            }
+        }).$mount("#box");
+        document.onclick = function(){
+          c.a = 222;
+            c.jsonData.name = "ihoihoil";
+        };
+        c.$watch("a",function(){
+            console.log("a数据发生变化");
+        });
+        c.$watch("jsonData",function(){
+            console.log("json数据发生变化")
+        },{deep:true});
+    }
+</script>
+</body>
+</html>

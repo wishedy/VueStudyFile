@@ -8,29 +8,38 @@
 </head>
 <body>
 <div id="box">
-    <button @click="show()">获取数据</button>
+    <input type="text" v-model="searchWord" @keyup="show()" placeholder="请输入搜索">
+    <p v-show="searchList.length===0">暂无搜索</p>
+    <ul>
+       <li v-for="item in searchList">{{item}}</li>
+    </ul>
 </div>
 <script>
     window.onload = function(){
         var c = new Vue({
             el:"#box",
+            data:{
+                searchWord:"",
+                searchList:[]
+            },
             methods:{
                 show:function(){
-                    this.$http.get("../data/list.json").then(function(res){
-                       console.log(res.data);
+                    /*this.$http.get("../data/list.json").then(function(res){
+                        console.log(res.data);
                     },function(){
                         console.log("失败函数")
-                    });
+                    });*/
+                    var t = this;
                     this.$http.jsonp("https://sug.so.360.cn/suggest",{
-                        word:"a"
+                        word:t.searchWord
                     }).then(function(res){
-                            console.log(res.data);
+                        this.searchList = res.data.s;
                     });
-                    this.$http.jsonp("https://www.baidu.com/s?ie=utf-8&mod=11&isbd=1&isid=3E7BC5C518D57157&ie=utf-8&f=8&rsv_bp=0&rsv_idx=1&tn=baidu",{
+                    /*this.$http.jsonp("https://www.baidu.com/s?ie=utf-8&mod=11&isbd=1&isid=3E7BC5C518D57157&ie=utf-8&f=8&rsv_bp=0&rsv_idx=1&tn=baidu",{
                         wd:"a"
                     },{
                         jsonp:"cb"
-                    })
+                    })*/
                 }
             }
 

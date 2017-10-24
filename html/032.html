@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/vue/1.0.21-csp/vue.js"></script>
+    <script src="../js/vue-resource.js"></script>
+</head>
+<body>
+<div id="box">
+    <div>
+        <aa></aa>
+        <se></se>
+        <sc></sc>
+        <part></part>
+    </div>
+</div>
+<script>
+    window.onload = function(){
+            var Aaa = Vue.extend({
+                template:"<h1>这是一个标题</h1>"
+            });//一个实例化的对象
+       var cd = Vue.extend({
+           template: "<h1 @click='change()'>{{msg}}</h1>",
+           data: function () {
+               return {msg: "这是一个组件数据"}
+           },
+           methods:{
+               change:function(){
+                   this.msg = "这是改变后的数据";
+               }
+           }
+       });
+            Vue.component("se",cd);
+            Vue.component("aa",Aaa);
+            Vue.component("sc",{template:"<h1>组件</h1>"})
+        var c = new Vue({
+            data:{
+
+            },
+            methods:{
+
+            },
+            components:{
+                part:cd
+            }
+        }).$mount("#box");
+    }
+</script>
+</body>
+</html>

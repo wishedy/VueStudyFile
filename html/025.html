@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/1.0.21-csp/vue.js"></script>
+    <script src="../js/vue-resource.js"></script>
+</head>
+<body>
+<div id="box">
+    <p>{{a|toDouble}}</p>
+    <p>{{b}}</p>
+    <p>{{b|date}}</p>
+    <p v-html="str"></p>
+    <p v-text="str"></p>
+    <p>{{str}}</p>
+    <p>{{str|replaceHtml}}1111</p>
+    <input type="text" v-model="str">
+</div>
+<script>
+    window.onload = function(){
+        Vue.filter("toDouble",function(v){
+            var num = parseInt(v);
+            if(num<10){
+                return "0"+v;
+            }else {
+                return v;
+            }
+        });
+        Vue.filter("replaceHtml",{
+            read:function(v){//model到view
+                return v.replace(/<\/?[^>]*>/g,"")
+            },
+            write:function(v){//view model
+                console.log(v);
+                return v;
+            }
+        });
+        Vue.filter("date",function(v){
+            var oDay = new Date(v);
+            return oDay.getFullYear()+"-"+(oDay.getMonth()+1)+"-"+(oDay.getDate())+"-"+oDay.getHours()+"-"+oDay.getMinutes()+"-"+oDay.getSeconds();
+        });
+        var c = new Vue({
+            data:{
+                a:9,
+                b:Date.now(),
+                str:"<strong>welcome</strong>"
+            },
+            methods:{
+
+            }
+        }).$mount("#box");
+    }
+</script>
+</body>
+</html>

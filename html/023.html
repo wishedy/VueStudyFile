@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/1.0.21-csp/vue.js"></script>
+    <script src="../js/vue-resource.js"></script>
+</head>
+<body>
+<div id="box">
+    <input type="text" @keyup="show | debounce 2000" placeholder="事件延时尝试">
+    <input type="text" v-model="searchVal">
+    <ul>
+        <li v-for="item in arr|limitBy 2 1">{{item}}</li>
+    </ul>
+    <ul>
+        <li v-for="item in arr|orderBy 1">{{item}}</li>
+    </ul>
+    <ul>
+        <li v-for="item in list|filterBy searchVal">{{item}}</li>
+    </ul>
+</div>
+<script>
+    window.onload = function(){
+        var c = new Vue({
+           data:{//limitBy 第一个参数代表取几个参数，第二个代表从哪儿开始，2，1，代表从1开始取两个数据，从0开始算
+                arr:[4,3,2,9,5,3],
+               list:["width","height","background","orange"],
+               searchVal:""
+            },
+            methods:{
+                show:function(){
+                    console.log("数据");
+                }
+
+            }
+        }).$mount("#box");
+    }
+</script>
+</body>
+</html>

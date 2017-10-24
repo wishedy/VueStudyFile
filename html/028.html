@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/1.0.21-csp/vue.js"></script>
+    <script src="../js/vue-resource.js"></script>
+</head>
+<body>
+<div id="box">
+    <input type="text" @keydown.ctrl="show()">
+</div>
+<script>
+    window.onload = function(){
+        Vue.directive("on").keyCodes.ctrl = 17;
+        var c = new Vue({
+            data:{
+
+            },
+            methods:{
+                show:function(){
+                    console.log("数据");
+                }
+            }
+        }).$mount("#box");
+    }
+</script>
+</body>
+</html>

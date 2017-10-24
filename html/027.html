@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/1.0.21-csp/vue.js"></script>
+    <script src="../js/vue-resource.js"></script>
+    <style>
+        zn-red{
+            background: #ff0000;
+            width: 100px;
+            height: 100px;
+
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <zn-red></zn-red>
+</div>
+<script>
+    window.onload = function(){
+            Vue.elementDirective("zn-red",{
+                bind:function(){
+                  this.el.style.background = "red";
+                }
+            });
+        var c = new Vue({
+            data:{
+                msg:"welcome",
+                a:"red"
+            },
+            methods:{
+
+            }
+        }).$mount("#box");
+    }
+</script>
+</body>
+</html>

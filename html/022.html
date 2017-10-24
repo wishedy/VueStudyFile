@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/1.0.21-csp/vue.js"></script>
+    <script src="../js/vue-resource.js"></script>
+</head>
+<body>
+<div id="box">
+    <button @click="add()" >添加数据</button>
+    <ul>
+        <li v-for="item in a">{{item}}</li>
+    </ul>
+    <ul>
+        <li v-for="item in a" track-by="$index">{{item}}</li>
+    </ul>
+</div>
+<script>
+    window.onload = function(){
+        var c = new Vue({
+            data:{
+                a:["orange","apple","juice","banner"],
+                str:""
+            },
+            methods:{
+                add:function(){
+                    this.a.push("tomato");
+                }
+            }
+        }).$mount("#box");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/1.0.21-csp/vue.js"></script>
+    <script src="../js/vue-resource.js"></script>
+</head>
+<body>
+<div id="box">
+    <p v-red="a">{{msg}}</p>
+</div>
+<script>
+    window.onload = function(){
+        Vue.directive("red",function(v){
+            this.el.style.background = v;
+        });
+        var c = new Vue({
+            data:{
+                msg:"welcome",
+                a:"red"
+            },
+            methods:{
+
+            }
+        }).$mount("#box");
+    }
+</script>
+</body>
+</html>

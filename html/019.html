@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/1.0.21-csp/vue.js"></script>
+    <script src="../js/vue-resource.js"></script>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <p v-cloak>{{msg}}</p>
+    <p v-text="msg">{{msg}}</p>
+</div>
+<script>
+    window.onload = function(){
+        var c = new Vue({
+            el:"#box",
+            data:{
+                msg:"welcome"
+            },
+            methods: {},
+            created:function(){
+                console.log("实例已经创建")
+            },
+            beforeCompile:function(){
+                console.log("实例开始编译");
+            },
+            compiled:function(){
+                console.log("实例编译完");
+            },
+            ready:function(){
+                console.log("数据渲染完")
+            },
+            beforeDestroy:function(){
+                console.log("实例销毁之前");
+            },
+            destroyed:function(){
+                console.log("实例销毁之后");
+            }
+
+        });
+        c.$destroy();
+    }
+</script>
+</body>
+</html>
