@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/1.0.21-csp/vue.js"></script>
+</head>
+<body>
+<div id="box">
+ <button @click="changeModule(0)">组件1</button>
+ <button @click="changeModule(1)">组件2</button>
+    <component :is="a"></component>
+</div>
+<script>
+    window.onload = function(){
+        var c = new Vue({
+            el:"#box",
+            data:{
+                a:""
+            },
+            methods:{
+              changeModule:function(v){
+                  if(parseInt(v,10)===0){
+                      this.a = "aaa";
+                  }else{
+                      this.a = "bbb";
+                  }
+              }
+            },
+            components: {
+                aaa:{
+                    template:"<h1>我是aaa<ddd></ddd></h1>",
+                    components:{
+                        ddd:{
+                            template:"<h2 @click='isD'>我是子组件{{mm}}</h2>",
+                            data:function(){
+                                return {
+                                    mm:"sss"
+                                }
+                            },
+                            methods:{
+                                isD:function(){
+                                    this.mm = "123545667"
+                                }
+                            }
+                        }
+                    }
+                },
+                bbb:{
+                    template:"<h1>我是bbb</h1>"
+                }
+            }
+        })
+    }
+</script>
+</body>
+</html>

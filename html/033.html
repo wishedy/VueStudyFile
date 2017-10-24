@@ -3,8 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/1.0.21-csp/vue.js"></script>
 </head>
 <body>
-
+<script type="text/x-template" id="myAa">
+    <h2 @click="change()">{{msg}}</h2>
+</script>
+<template id="d">
+    <ul>
+        <li v-for="item in arr">{{item}}</li>
+    </ul>
+</template>
+<div id="box">
+    <my-aa></my-aa>
+    <tem></tem>
+</div>
+<script>
+    window.onload = function(){
+        var c = new Vue({
+            el:"#box",
+            components:{
+                "my-aa":{
+                    template:"#myAa",
+                    data:function(){
+                        return {
+                            "msg":"这是一个组件数据"
+                        }
+                    },
+                    methods:{
+                        change:function(){
+                            this.msg = "这是通过script改变的数据"
+                        }
+                    }
+                },
+                tem:{
+                    template:"#d",
+                    data:function(){
+                        return {
+                            arr:["aaa","asdf","ffccds","qqer"]
+                        }
+                    }
+                }
+            }
+        })
+    }
+</script>
 </body>
 </html>
