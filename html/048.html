@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/2.0.3/vue.js"></script>
+</head>
+<body>
+<template id="out">
+    <div>我是一个父组件</div>
+    <son-module></son-module>
+</template>
+<div id="box">
+    <p>{{msg}}</p>
+</div>
+<script>
+    window.onload = function(){
+        var c = new Vue({
+           el:"#box",
+           data:{
+               msg:"isMessage"
+           },
+            components:{
+               container:"#out",
+                data:function(){
+                   return {
+                       parentMsg:"我是一条父组件的数据"
+                   }
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>

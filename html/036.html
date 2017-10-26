@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/1.0.21-csp/vue.js"></script>
+</head>
+<body>
+<div id="box">
+    <overall></overall>
+    <bcom></bcom>
+    <button @click="changeModule(1)">显示第一个组件</button>
+    <button @click="changeModule(-1)">显示第二个组件</button>
+    <button @click="changeModule(2)">显示第一个私有组件</button>
+    <button @click="changeModule(-2)">显示第二个私有组件</button>
+    <component :is="comStyle"></component>
+</div>
+<script>
+    window.onload = function(){
+        var para = Vue.extend({
+            template:"<h1 @click='addData()'>这是A全局组件{{msg}}</h1>",
+            data:function(){
+                return {
+                    "msg":""
+                }
+            },
+            methods:{
+                addData:function(){
+                    this.msg ="全局组件点击后的展示数据"
+                }
+            }
+        });
+        var param = Vue.extend({
+            template:"<h1 @click='addData()'>这是B全局组件{{msg}}</h1>",
+            data:function(){
+                return {
+                    "msg":""
+                }
+            },
+            methods:{
+                addData:function(){
+                    this.msg ="全局组件点击后的展示数据"
+                }
+            }
+        });
+        Vue.component("overall",para);
+        Vue.component("bcom",param);
+        var c = new Vue({
+                el:"#box",
+                data:{
+                  comStyle:""
+                },
+                methods:{
+                    changeModule:function(i){
+                        if(i===1){
+                            this.comStyle = "overall";
+                        }else if(i===-1){
+                            this.comStyle = "bcom";
+                        }else if(i===2){
+                            this.comStyle = "selfModule0";
+                        }else if(i===-2){
+                            this.comStyle = "selfModule1";
+                        }
+                    }
+                },
+            components:{
+                   selfModule0:{
+                       data:function(){
+                           return {
+                               aData:"这是第一个私有组件",
+                               childData:"子组件未获取数据"
+                           }
+                       },
+                       components:{
+                         sefl01:{
+                             template:"<h3 @click.stop='sendMessage()'>我是可以点击的子组件{{msg}}{{message}}</h3>",
+                             data:function(){
+                                 return {
+                                     msg:"我是子组件的数据"
+                                 }
+                             },
+                             methods:{
+                                 sendMessage:function(){
+                                     console.log(this.msg)
+                                     this.$emit("child-msg",this.msg)
+                                 }
+                             },
+                             props:{
+                                 message:""
+                             }
+                         }
+                       },
+                       methods:{
+                           getMessage:function(d){
+                               console.log("进入");
+                               this.childData = d;
+                           }
+                       },
+                       template:"<h1 >{{aData}}<sefl01 :message='aData'  @child-msg='getMessage'></sefl01>{{childData}}</h1>"
+                   },
+                    selfModule1:{
+                        data:function(){
+                            return {
+                                aData:"这是第二个私有组件"
+                            }
+                        },
+                        template:"<h1>{{aData}}</h1>"
+                    }
+            }
+        })
+    }
+</script>
+</body>
+</html>

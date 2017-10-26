@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/2.0.3/vue.js"></script>
+</head>
+<body>
+<div id="box">
+    <p>
+        {{msg}}
+    </p>
+    <ul>
+        <li v-for="item in list">{{item}}</li>
+    </ul>
+    <ul>
+        <li v-for="item in json">{{item}}{{$key}}</li>
+    </ul>
+    <ul>
+        <li v-for="(value,index) in list">{{value}}{{index}}</li>
+    </ul>
+    <ul>
+        <li v-for="(vaule,key) in json">{{vaule}}{{key}}</li>
+    </ul>
+</div>
+<script>
+    window.onload = function(){
+        var c = new Vue({
+            el:"#box",
+            data:{
+                msg:"welcome",
+                list:["width","height","color"],
+                json:{
+                    a:"aa",
+                    b:"bb",
+                    c:"cc"
+                }
+            }
+        })
+    }
+</script>
+</body>
+</html>

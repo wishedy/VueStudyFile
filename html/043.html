@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/2.0.3/vue.js"></script>
+</head>
+<body>
+<div id="box">
+    <my-aaa></my-aaa>
+    <p>
+        {{msg}}
+    </p>
+</div>
+<script>
+
+    window.onload = function(){
+        Vue.component("my-aaa",{
+            template:"<h2>我是一个组件</h2>"
+        });
+        var c = new Vue({
+            el:"#box",
+            data:{
+                msg:"welcome vue2.0"
+            }
+        })
+    }
+</script>
+</body>
+</html>

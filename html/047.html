@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/2.0.3/vue.js"></script>
+</head>
+<body>
+<div id="box">
+    <p>
+      {{price|demo}}
+    </p>
+</div>
+<script>
+    window.onload = function(){
+        Vue.filter("demo",function(v){
+            if(parseInt(v,10)<10){
+                return "0"+v;
+            }else{
+                return v;
+            }
+        })
+        var c = new Vue({
+            el:"#box",
+            data:{
+                price:"1"
+            }
+        })
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/2.0.3/vue.js"></script>
+</head>
+<body>
+<div id="box">
+    <p @click="update()">
+        {{msg}}
+    </p>
+</div>
+<script>
+    window.onload = function(){
+        var c = new Vue({
+           el:"#box",
+           beforeCreate:function(){
+               console.log("组件刚刚被创建,属性还没有");
+           },
+            created:function(){
+               console.log("实例已经创建完成，属性已经绑定，但是dom还没有生成");
+            },
+            beforeMount:function(){
+                console.log("模板编译之前")
+            },
+            mounted:function(){
+              console.log("模板已经编译完成,相当于之前的ready");
+            },
+            beforeUpdate:function(){
+              console.log("组件在更新之前");
+            },
+            updated:function(){
+              console.log("组件更新之后");
+            },
+            methods:{
+              update:function(){
+                  this.msg = "这是新更新的数据";
+              }
+            },
+            data:{
+                "msg":"2.0live"
+            }
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/1.0.21-csp/vue.js"></script>
+</head>
+<body>
+<template id="tem">
+    <h1>这是一个组件数据</h1>
+    <slot name="a-slot"></slot>
+</template>
+<div id="box">
+    <module>
+        <ul slot="a-slot">
+            <li>111111</li>
+            <li>222222</li>
+            <li>333333</li>
+            <li>444444</li>
+        </ul>
+        <ul slot="b-slot">
+            <li>111111</li>
+            <li>222222</li>
+            <li>333333</li>
+            <li>444444</li>
+        </ul>
+    </module>
+</div>
+<script>
+    window.onload = function(){
+        var c = new Vue({
+            el:"#box",
+            data:{
+
+            },
+            methods:{
+
+            },
+            components:{
+                module:{
+                    template:"#tem",
+
+                }
+            }
+        })
+    }
+</script>
+</body>
+</html>
