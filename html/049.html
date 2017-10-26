@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/2.0.3/vue.js"></script>
+</head>
+<body>
+<template id="child">
+    <div>
+        <button @click="change()">改变父组件数据</button>
+        <p>{{info}}{{se.a}}</p>
+    </div>
+</template>
+<template id="a">
+    <div>
+        <button @click="send()">把A数据给C</button>
+        <h1>这是a组件{{a}}</h1>
+    </div>
+</template>
+<template id="b">
+    <div>
+        <button @click="send()">把B数据给C</button>
+        <h1>这是b组件{{b}}</h1>
+    </div>
+</template>
+<template id="c">
+    <div>
+        <h1>这是c组件{{c}}{{a}}</h1>
+    </div>
+</template>
+    <div id="box">
+        {{msg}}{{isChild.a}}
+        <child-com :se="isChild"></child-com>
+        <com-a></com-a>
+        <com-b></com-b>
+        <com-c></com-c>
+    </div>
+    <script>
+        window.onload = function(){
+            //准备一个空的实例对象
+            var _event = new Vue();
+             var c = new Vue({
+                el:"#box",
+                data:{
+                    msg:"welcome",
+                    isChild:{
+                        "a":"这是父组件数据"
+                    }
+                } ,
+                 methods:{
+
+                 },
+                 components:{
+                    "child-com":{
+                        template:"#child",
+                        data:function(){
+                            return {
+                                info:"这是一个子组件数据"
+                            }
+                        },
+                        methods:{
+                            change:function(){
+                                this.se.a = "改变父组件数据";
+                            }
+                        },
+                        props:["se"],
+                        mounted:function(){
+                            //this.se =
+                        }
+
+                    },
+                     'com-a':{
+                        "template":"#a",
+                         data:function(){
+                            return {
+                                a:"这是a数据"
+                            }
+                         },
+                         methods:{
+                             send:function(){
+                                _event.$emit("a-msg",this.a)
+                             }
+                         }
+                     },
+                     'com-b':{
+                         "template":"#b",
+                         data:function(){
+                             return {
+                                 b:"这是b数据"
+                             }
+                         },
+                         methods:{
+                             send:function(){
+                                 console.log(this.b)
+                                 _event.$emit("b-msg",this.b);
+                             }
+                         }
+                     },
+                     'com-c':{
+                         "template":"#c",
+                         data:function(){
+                             return {
+                                 c:"这是c数据",
+                                 a:"",
+                                 b:""
+                             }
+                         },
+                         mounted:function(){
+                             //c组件加载完毕
+                             var t = this;
+                             _event.$on("a-msg",function(v){
+                                 console.log(v);
+                                 t.a = v;
+                             });
+                             _event.$on("b-msg",function(v){
+                                t.b = v ;
+                             });
+                         }
+                     }
+                 }
+             });
+        }
+    </script>
+</body>
+</html>
