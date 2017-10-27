@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/2.0.3/vue.js"></script>
+    <link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.css" rel="stylesheet">
+    <style>
+        .demo{
+            width: 100px;
+            height: 100px;
+            background: #42b983;
+            margin: 10px auto;
+            color: #fff;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <input type="text" placeholder="要显示的元素" v-model="show">
+    <transition-group enter-active-class="zoomInLeft" leave-active-class="zoomOutRight">
+        <div class="demo animated" v-show="show" v-for="(val,index) in list" :key="index"><h1>{{val}}</h1></div>
+    </transition-group>
+</div>
+<script>
+    window.onload = function(){
+        var c = new Vue({
+            el:"#box",
+            data:{
+                show:"",
+                arr:["abd","abda","cbda","abd","abda","cbda"]
+            },
+            computed:{
+                list:function(){
+                    var listArr = [];
+                    var t = this;
+                    this.arr.forEach(function(val,i){
+                        if(val.indexOf(t.show)>-1){
+                            listArr.push(val);
+                        }
+                    });
+                    return listArr;
+                }
+            }
+        })
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/2.0.3/vue.js"></script>
+    <script src="../bower_components/vue-router/dist/vue-router.js"></script>
+    <link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.css" rel="stylesheet">
+</head>
+<body>
+<template id="home">
+    <div>
+        <h1>这是首页组件</h1>
+        <router-link to="/home/list">子路由1</router-link>
+        <router-link to="/home/detail">子路由2</router-link>
+        <router-link to="/home/detail01/age/10">detail01</router-link>
+        <router-link to="/home/detail02/age/11">detail02</router-link>
+        <router-link to="/home/detail03/age/12">detail03</router-link>
+        <router-link to="/home/detail04/age/13">detail04</router-link>
+        <router-view></router-view>
+    </div>
+</template>
+<template id="news">
+    <div>
+        <h1>这是新闻组件</h1>
+    </div>
+</template>
+<template id="list">
+    <div>
+        <h1>子路由界面</h1>
+    </div>
+</template>
+<template id="detail">
+    <div>
+        <h1>第二个子路由界面{{$route.params}}</h1>
+    </div>
+</template>
+<div id="box">
+    <button @click="addRoute()">添加路由</button>
+    <router-link to="/home">首页</router-link>
+    <router-link to="/news">新闻</router-link>
+    <transition enter-active-class="zoomInLeft"  leave-active-class="zoomOutRight">
+        <router-view class="animated"></router-view>
+    </transition>
+
+</div>
+<script>
+    window.onload = function(){
+        const Home = {
+            'template':"#home"
+        };
+        const News = {
+            'template':"#news"
+        };
+        const List = {
+          template:"#list"
+        };
+        const Detail = {
+            template:"#detail"
+        };
+        const routes = [
+            {
+                path:"/home",
+                component:Home,
+                children:[
+                    {
+                        path:"/home/list",
+                        component:List
+                    },
+                    {
+                        path:":userName/age/:ageNum",
+                        component:Detail
+                    },
+                    {
+                        path:"/home/detail",
+                        component:Detail
+                    }
+
+                ]
+            },
+            {
+                path:"/news",
+                component:News
+            }/*,
+            {
+                path:"*",
+                redirect:"/home"
+            }*/
+        ];
+        const router = new VueRouter({
+            routes
+        });
+
+        const c = new Vue({
+            el:"#box",
+            router,
+            methods:{
+                addRoute:function(){
+                    router.push({"path":"home"})//显示效果比较像页面跳转这时候会添加到历史记录里
+                   // router.replace({"path":"news"});//也会实现页面跳转但是不会推进历史记录，不会实现页面的刷新
+                }
+            }
+        })
+    }
+</script>
+</body>
+</html>

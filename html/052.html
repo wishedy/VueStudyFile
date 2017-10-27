@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/2.0.3/vue.js"></script>
+    <link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.css" rel="stylesheet">
+    <style>
+        .demo{
+            width: 300px;
+            height: 300px;
+            background: #42b983;
+            margin: 10px auto;
+        }
+
+    </style>
+</head>
+<body>
+<div id="box">
+    <p>{{msg}}</p>
+    <button @click="change()">点击显示隐藏</button>
+    <transition-group  enter-active-class="zoomInLeft"  leave-active-class="zoomOutRight">
+        <div v-show="showOnOff" class="demo animated" :key="1"></div>
+        <div v-show="showOnOff" class="demo animated" :key="2"></div>
+    </transition-group>
+
+</div>
+<script>
+    window.onload = function(){
+        var c = new Vue({
+            el: "#box",
+            data: {
+                msg: "welcome Vue",
+                showOnOff:false
+            },
+            methods:{
+                change:function(){
+                    this.showOnOff = !this.showOnOff;
+                },
+                beforeLeave:function(){
+                    console.log("动画离开之前")
+                },
+                leaveMethod:function(){
+                    console.log("动画离开")
+                },
+                beforeEnter:function(el){
+                    //el是运动元素
+                    console.log("进入动画之前");
+                },
+                afterLeave:function(){
+                    console.log("动画离开后")
+                },
+                afterEnter:function(){
+                    console.log("动画完成")
+                },
+                show:function(el){
+                    //el是运动元素
+                    console.log("进入动画");
+                }
+            }
+        })
+    }
+</script>
+</body>
+</html>

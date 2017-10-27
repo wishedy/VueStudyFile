@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/2.0.3/vue.js"></script>
+    <script src="../bower_components/vue-router/dist/vue-router.js"></script>
+    <style>
+        .router-link-active{
+            color: #ff0000;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<template id="home">
+    <div>
+        <h1>这是首页组件</h1>
+    </div>
+</template>
+<template id="news">
+    <div>
+        <h1>这是新闻组件</h1>
+    </div>
+</template>
+<div id="box">
+    <p>{{msg}}</p>
+    <router-link to="/home">主页</router-link>
+    <router-link to="/news">新闻</router-link>
+    <router-view></router-view>
+</div>
+<script>
+    window.onload = function(){
+        var Home = {
+            "template":"#home"
+        };
+        var News = {
+            "template":"#news"
+        };
+        var routes = [
+            {path:"/home","component":Home},
+            {path:"/news","component":News},
+            {path:"*",redirect:"/home"}
+        ];
+        var router = new VueRouter({
+            routes
+        });
+        var c = new Vue({
+            "el":"#box",
+            data:{
+                msg:"welcome-vue-router"
+            },
+            router,
+        });
+    }
+</script>
+</body>
+</html>
