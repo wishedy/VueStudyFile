@@ -1,5 +1,5 @@
 {
-  "name": "vue-webpack-simple-demo2",
+  "name": "vue-webpack-simple-demo3",
   "description": "A Vue.js project",
   "version": "1.0.0",
   "author": "zhangheng <zhangheng@allinmd.cn>",
@@ -9,7 +9,6 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
-    "animate": "^1.0.0",
     "vue": "^2.4.4"
   },
   "devDependencies": {

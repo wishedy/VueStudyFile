@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "animate": "^1.0.0",
+    "vue-router": "^3.0.1"
+  }
+}
