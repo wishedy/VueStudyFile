@@ -23,7 +23,7 @@
 
       </mt-tab-container-item>
       <mt-tab-container-item id="2">
-
+        <Loading></Loading>
       </mt-tab-container-item>
 
       </mt-tab-container-item>
