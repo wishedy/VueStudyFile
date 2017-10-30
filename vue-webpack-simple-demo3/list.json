@@ -1,0 +1,176 @@
+{
+  "responseObject": {
+    "responseData": {
+      "down_data_list": [
+        {
+          "navigationId": "31",
+          "navigationLogo": "https:\/\/img04.allinmd.cn\/navigation\/2017\/09\/20\/1505889274949_1505889355337.png",
+          "navigationSort": 5,
+          "navigationName": "专题汇总",
+          "navigationStart": "2017-09-20 14:38:30.0",
+          "navigationPath": "\/\/www.allinmd.cn\/html\/theme\/1498728229404\/theme_index.html",
+          "navigationEnd": "2018-02-28 14:10:47.0",
+          "navigationStatus": 0
+        },
+        {
+          "navigationId": "43",
+          "navigationLogo": "https:\/\/img04.allinmd.cn\/navigation\/2017\/09\/20\/1480664272873_1505889624078.png",
+          "navigationSort": 6,
+          "navigationName": "直播列表",
+          "navigationStart": "2016-12-02 15:45:58.0",
+          "navigationPath": "\/\/www.allinmd.cn\/pages\/live\/livingList.html",
+          "navigationEnd": "2018-06-23 14:50:00.0",
+          "navigationStatus": 0
+        },
+        {
+          "navigationId": "23",
+          "navigationLogo": "https:\/\/img04.allinmd.cn\/navigation\/2017\/10\/16\/1475997800394_1508116568459.png",
+          "navigationSort": 7,
+          "navigationName": "权威专家",
+          "navigationStart": "2017-10-15 00:00:42.0",
+          "navigationPath": "\/\/www.allinmd.cn\/pages\/discover\/discover_expert.html",
+          "navigationEnd": "2018-05-31 18:00:42.0",
+          "navigationStatus": 0
+        },
+        {
+          "navigationId": "9",
+          "navigationLogo": "https:\/\/img04.allinmd.cn\/navigation\/2017\/10\/16\/1475997800392_1508116657331.png",
+          "navigationSort": 8,
+          "navigationName": "医师推荐",
+          "navigationStart": "2017-10-15 09:00:42.0",
+          "navigationPath": "\/\/www.allinmd.cn\/pages\/personal\/friends_recommend.html",
+          "navigationEnd": "2018-03-31 18:00:42.0",
+          "navigationStatus": 0
+        }
+      ],
+      "data_list": [
+        {
+          "navigationId": "17",
+          "navigationLogo": "https:\/\/img04.allinmd.cn\/navigation\/2017\/10\/25\/1508379923443_1508925371790.png",
+          "navigationSort": 1,
+          "navigationName": "按类型1",
+          "navigationStart": "2017-10-24 00:00:41.0",
+          "navigationPath": "\/\/www.allinmd.cn\/pages\/discover\/discover_major.html#type=resource&resType=1",
+          "navigationEnd": "2018-03-31 18:00:41.0",
+          "navigationStatus": 0
+        },
+        {
+          "navigationId": "18",
+          "navigationLogo": "https:\/\/img04.allinmd.cn\/navigation\/2017\/10\/25\/1508383897971_1508925342710.png",
+          "navigationSort": 2,
+          "navigationName": "按专业1",
+          "navigationStart": "2017-10-24 00:00:41.0",
+          "navigationPath": "\/\/www.allinmd.cn\/pages\/discover\/discover_major.html#type=major",
+          "navigationEnd": "2018-02-28 17:50:41.0",
+          "navigationStatus": 0
+        },
+        {
+          "navigationId": "19",
+          "navigationLogo": "https:\/\/img04.allinmd.cn\/navigation\/2017\/10\/25\/1508385508250_1508925320072.png",
+          "navigationSort": 3,
+          "navigationName": "按术士1",
+          "navigationStart": "2017-10-24 00:00:41.0",
+          "navigationPath": "\/\/www.allinmd.cn\/pages\/discover\/discover_major.html#type=operation",
+          "navigationEnd": "2018-03-31 18:00:41.0",
+          "navigationStatus": 0
+        },
+        {
+          "navigationId": "20",
+          "navigationLogo": "https:\/\/img04.allinmd.cn\/navigation\/2017\/10\/25\/1508390029109_1508925389602.png",
+          "navigationSort": 4,
+          "navigationName": "按疾病1",
+          "navigationStart": "2017-10-24 00:00:41.0",
+          "navigationPath": "\/\/www.allinmd.cn\/pages\/discover\/discover_major.html#type=disease",
+          "navigationEnd": "2018-03-31 22:50:41.0",
+          "navigationStatus": 0
+        },
+        {
+          "navigationId": "31",
+          "navigationLogo": "https:\/\/img04.allinmd.cn\/navigation\/2017\/09\/20\/1505889274949_1505889355337.png",
+          "navigationSort": 5,
+          "navigationName": "专题汇总",
+          "navigationStart": "2017-09-20 14:38:30.0",
+          "navigationPath": "\/\/www.allinmd.cn\/html\/theme\/1498728229404\/theme_index.html",
+          "navigationEnd": "2018-02-28 14:10:47.0",
+          "navigationStatus": 0
+        },
+        {
+          "navigationId": "43",
+          "navigationLogo": "https:\/\/img04.allinmd.cn\/navigation\/2017\/09\/20\/1480664272873_1505889624078.png",
+          "navigationSort": 6,
+          "navigationName": "直播列表",
+          "navigationStart": "2016-12-02 15:45:58.0",
+          "navigationPath": "\/\/www.allinmd.cn\/pages\/live\/livingList.html",
+          "navigationEnd": "2018-06-23 14:50:00.0",
+          "navigationStatus": 0
+        },
+        {
+          "navigationId": "23",
+          "navigationLogo": "https:\/\/img04.allinmd.cn\/navigation\/2017\/10\/16\/1475997800394_1508116568459.png",
+          "navigationSort": 7,
+          "navigationName": "权威专家",
+          "navigationStart": "2017-10-15 00:00:42.0",
+          "navigationPath": "\/\/www.allinmd.cn\/pages\/discover\/discover_expert.html",
+          "navigationEnd": "2018-05-31 18:00:42.0",
+          "navigationStatus": 0
+        },
+        {
+          "navigationId": "9",
+          "navigationLogo": "https:\/\/img04.allinmd.cn\/navigation\/2017\/10\/16\/1475997800392_1508116657331.png",
+          "navigationSort": 8,
+          "navigationName": "医师推荐",
+          "navigationStart": "2017-10-15 09:00:42.0",
+          "navigationPath": "\/\/www.allinmd.cn\/pages\/personal\/friends_recommend.html",
+          "navigationEnd": "2018-03-31 18:00:42.0",
+          "navigationStatus": 0
+        }
+      ],
+      "up_data_list": [
+        {
+          "navigationId": "17",
+          "navigationLogo": "https:\/\/img04.allinmd.cn\/navigation\/2017\/10\/25\/1508379923443_1508925371790.png",
+          "navigationSort": 1,
+          "navigationName": "按类型1",
+          "navigationStart": "2017-10-24 00:00:41.0",
+          "navigationPath": "\/\/www.allinmd.cn\/pages\/discover\/discover_major.html#type=resource&resType=1",
+          "navigationEnd": "2018-03-31 18:00:41.0",
+          "navigationStatus": 0
+        },
+        {
+          "navigationId": "18",
+          "navigationLogo": "https:\/\/img04.allinmd.cn\/navigation\/2017\/10\/25\/1508383897971_1508925342710.png",
+          "navigationSort": 2,
+          "navigationName": "按专业1",
+          "navigationStart": "2017-10-24 00:00:41.0",
+          "navigationPath": "\/\/www.allinmd.cn\/pages\/discover\/discover_major.html#type=major",
+          "navigationEnd": "2018-02-28 17:50:41.0",
+          "navigationStatus": 0
+        },
+        {
+          "navigationId": "19",
+          "navigationLogo": "https:\/\/img04.allinmd.cn\/navigation\/2017\/10\/25\/1508385508250_1508925320072.png",
+          "navigationSort": 3,
+          "navigationName": "按术士1",
+          "navigationStart": "2017-10-24 00:00:41.0",
+          "navigationPath": "\/\/www.allinmd.cn\/pages\/discover\/discover_major.html#type=operation",
+          "navigationEnd": "2018-03-31 18:00:41.0",
+          "navigationStatus": 0
+        },
+        {
+          "navigationId": "20",
+          "navigationLogo": "https:\/\/img04.allinmd.cn\/navigation\/2017\/10\/25\/1508390029109_1508925389602.png",
+          "navigationSort": 4,
+          "navigationName": "按疾病1",
+          "navigationStart": "2017-10-24 00:00:41.0",
+          "navigationPath": "\/\/www.allinmd.cn\/pages\/discover\/discover_major.html#type=disease",
+          "navigationEnd": "2018-03-31 22:50:41.0",
+          "navigationStatus": 0
+        }
+      ]
+    },
+    "responseMessage": "",
+    "responseCode": "",
+    "responsePk": 0,
+    "responseStatus": true
+  }
+}
