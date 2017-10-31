@@ -1,0 +1,89 @@
+.container {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background: #f2f2f2; }
+  .container .spa-header {
+    position: fixed;
+    top: 0;
+    z-index: 6;
+    width: 100%; }
+    .container .spa-header .header-list {
+      height: 40px;
+      margin: 0 auto;
+      background: #dbf8f0; }
+      .container .spa-header .header-list .header-item {
+        line-height: 40px;
+        float: left;
+        font-size: 18px;
+        text-align: center;
+        width: 33%; }
+        .container .spa-header .header-list .header-item a {
+          font-size: 18px; }
+        .container .spa-header .header-list .header-item.active {
+          border-bottom: 2px solid #1063ff; }
+  .container .content {
+    width: 100%;
+    margin-top: 50px;
+    padding-bottom: 60px;
+    -moz-box-shadow: 0px 0px 7px #616161;
+    -webkit-box-shadow: 0px 0px 7px #616161;
+    box-shadow: 0px 0px 7px #616161;
+    background: #fff; }
+    .container .content .content-item {
+      padding: 0 15px;
+      border-bottom: 1px dashed #ddd; }
+      .container .content .content-item .title {
+        line-height: 36px;
+        font-size: 18px; }
+      .container .content .content-item .des {
+        line-height: 30px;
+        font-size: 14px; }
+    .container .content .banner {
+      height: 200px;
+      background: #fff; }
+      .container .content .banner .slide-img {
+        width: 100%;
+        height: 100%; }
+        .container .content .banner .slide-img img {
+          width: 100%;
+          height: 100%; }
+      .container .content .banner .swiper-pagination {
+        width: 100%;
+        height: 20px; }
+  .container .spa-footer {
+    height: 60px;
+    background: #27c3bb;
+    position: fixed;
+    bottom: 0;
+    z-index: 6;
+    width: 100%; }
+    .container .spa-footer .footer-item {
+      float: left;
+      width: 25%;
+      font-size: 18px;
+      text-align: center;
+      color: #fdffee;
+      height: 100%; }
+      .container .spa-footer .footer-item i {
+        display: block;
+        width: 100%;
+        height: 30px;
+        margin-bottom: 5px; }
+      .container .spa-footer .footer-item .icon-index {
+        background: url("../img/icon/index.png") no-repeat center 50%;
+        background-size: 30%; }
+      .container .spa-footer .footer-item .icon-discover {
+        background: url("../img/icon/discover.png") no-repeat center 50%;
+        background-size: 30%; }
+      .container .spa-footer .footer-item .icon-message {
+        background: url("../img/icon/message.png") no-repeat center 50%;
+        background-size: 30%; }
+      .container .spa-footer .footer-item .icon-my {
+        background: url("../img/icon/my.png") no-repeat center 50%;
+        background-size: 30%; }
+      .container .spa-footer .footer-item.active {
+        border-top: 2px solid #ff1142; }
+
+/*# sourceMappingURL=page.css.map */
