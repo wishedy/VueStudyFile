@@ -1,6 +1,9 @@
 import  Hot from "../components/Hot.vue"
 import  Case from "../components/Case.vue"
 import  Video from "../components/Video.vue"
+import  Discover from "../components/Discover.vue"
+import  Message from "../components/Message.vue"
+import  My from "../components/My.vue"
 export default {
     routes: [
         {
@@ -18,6 +21,18 @@ export default {
         {
             path:"*",
             redirect:"/hot"
+        },
+        {
+            path: "/discover",
+            component: Discover
+        },
+        {
+            path: "/message",
+            component: Message
+        },
+        {
+            path: "/my",
+            component: My
         }
     ]
 };

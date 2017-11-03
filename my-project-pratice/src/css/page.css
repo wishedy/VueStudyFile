@@ -71,17 +71,19 @@
         width: 100%;
         height: 30px;
         margin-bottom: 5px; }
+      .container .spa-footer .footer-item a {
+        color: #fdffee; }
       .container .spa-footer .footer-item .icon-index {
-        background: url("../img/icon/index.png") no-repeat center 50%;
+        background: url("../assets/icon/index.png") no-repeat center 50%;
         background-size: 30%; }
       .container .spa-footer .footer-item .icon-discover {
-        background: url("../img/icon/discover.png") no-repeat center 50%;
+        background: url("../assets/icon/discover.png") no-repeat center 50%;
         background-size: 30%; }
       .container .spa-footer .footer-item .icon-message {
-        background: url("../img/icon/message.png") no-repeat center 50%;
+        background: url("../assets/icon/message.png") no-repeat center 50%;
         background-size: 30%; }
       .container .spa-footer .footer-item .icon-my {
-        background: url("../img/icon/my.png") no-repeat center 50%;
+        background: url("../assets/icon/my.png") no-repeat center 50%;
         background-size: 30%; }
       .container .spa-footer .footer-item.active {
         border-top: 2px solid #ff1142; }
