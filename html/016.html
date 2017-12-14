@@ -9,11 +9,16 @@
 <body>
 <div id="box">
     <button @click="show()">获取数据</button>
+    <div style="width: 100px;height: 100px;background: #333;" v-show="a===0||b===0"></div>
 </div>
 <script>
     window.onload = function(){
         var c = new Vue({
             el:"#box",
+            data:{
+              a:0,
+              b:0
+            },
             methods:{
                 show:function(){
                     this.$http.get("../data/list.json").then(function(res){
